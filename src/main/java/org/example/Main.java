@@ -87,6 +87,13 @@ public class Main {
 
         Animal animal;
 
+        try (Counter counter = new Counter()) {
+
+            counter.add();
+            System.out.println("количестов животных увеличено на : " + counter.getCount());
+
+        }
+
         if (type.equalsIgnoreCase("Кошка")) {
             animal = createCat(name, dateOfBirth);
         } else if (type.equalsIgnoreCase("Собака")) {
